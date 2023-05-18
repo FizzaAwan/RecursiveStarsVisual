@@ -1,4 +1,3 @@
-//Afham Bashir 
 #include <iostream>
 using namespace std;
  
