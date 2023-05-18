@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+ 
+void output (int stars);   //for each row
+void patterns (int stars);  //for pattern of rows
+void reverse_output (int stars);
+void reverse_patterns (int stars); 
+
+ 
+int main () {
+  int stars; 
+  cout << "Enter number of stars: " <<endl; 
+  cin >> stars;
+  patterns(stars); 
+  if (stars>1){ 
+  reverse_patterns(stars);}  
+  return 0;
+}
+
+void patterns(int stars){
+  if (stars ==1) {
+    cout <<"*" <<endl; 
+    return; } 
+ output(stars);
+ patterns(stars-1);    
+}
+
+void output (int stars){
+  if (stars == 0 ){
+    cout << "\n" << endl; 
+    return ;} 
+ cout <<"*";
+ return output(stars-1); 
+}
+
+void reverse_patterns(int stars){
+ if (stars == 1){
+    return; } 
+ reverse_output(stars);
+ reverse_patterns(stars-1);    
+}
+
+void reverse_output (int stars){
+  i++; 
+  if (i == stars ){
+    cout << "\n" << endl; 
+    return ;} 
+ cout <<"*"; 
+ return output(stars-1); 
+}
